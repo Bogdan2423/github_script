@@ -14,7 +14,8 @@ patches = []
 
 for repo in repos:
     repo = repo.split("/")[1]
-    os.mkdir(repo)
+    if not os.path.exists(repo):
+        os.mkdir(repo)
 
 for repo in repos:
     page = 0
